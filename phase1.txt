@@ -1,0 +1,9 @@
+mkdir mern-dashboard
+cd mern-dashboard
+
+mkdir server
+cd server
+
+npm init -y
+
+npm install express mongoose cors dotenv nodemon
