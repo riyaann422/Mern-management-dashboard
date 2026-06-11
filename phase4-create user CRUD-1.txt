@@ -1,0 +1,33 @@
+Route:
+
+router.post("/",createUser);
+
+Update User
+exports.updateUser = async(req,res)=>{
+
+    const user = await User.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new:true}
+    );
+
+    res.json(user);
+};
+Delete user
+
+Route:
+
+router.put("/:id",updateUser);
+Delete User
+exports.deleteUser = async(req,res)=>{
+
+    await User.findByIdAndDelete(req.params.id);
+
+    res.json({
+        message:"Deleted"
+    });
+};
+
+Route:
+
+router.delete("/:id",deleteUser);
